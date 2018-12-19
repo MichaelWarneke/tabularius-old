@@ -4,14 +4,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../../environments/environment';
-import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
-import { EffectsModule } from '@ngrx/effects';
-import { AppEffects } from './app.effects';
+
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 
 import { MaterialModule } from '../material/material.module';
+import { AppStoreModule } from '../app-store/app-store.module';
 
 @NgModule({
   declarations: [NavComponent],
@@ -22,8 +20,7 @@ import { MaterialModule } from '../material/material.module';
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
     }),
-    StoreModule.forRoot(reducers, { metaReducers }),
-    EffectsModule.forRoot([AppEffects]),
+    AppStoreModule,
     LayoutModule,
 
     MaterialModule
