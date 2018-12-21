@@ -14,13 +14,15 @@ export class NavComponent {
     .observe(Breakpoints.Handset)
     .pipe(map(result => result.matches));
 
-  @ViewChild('drawer') sidenav: MatSidenav;
+  @ViewChild('drawer') sidenav?: MatSidenav;
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   closeDrawer() {
     if (this.breakpointObserver.isMatched(Breakpoints.Handset)) {
-      this.sidenav.close();
+      if (this.sidenav) {
+        this.sidenav.close();
+      }
     }
   }
 }
