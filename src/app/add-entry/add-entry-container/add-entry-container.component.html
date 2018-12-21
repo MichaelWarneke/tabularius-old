@@ -1,5 +1,4 @@
 <p>add-entry-container works!</p>
 <p>State : {{ state$ | async }} !</p>
 
-<tabu-add-entry-form></tabu-add-entry-form>
-<button mat-raised-button (click)="addEntry()">Add</button>
+<tabu-add-entry-form (addEntry)="addEntry()"></tabu-add-entry-form>

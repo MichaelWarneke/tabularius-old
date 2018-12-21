@@ -8,7 +8,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { AddEntryEffects } from './store/add-entry.effects';
 import { AddEntryContainerComponent } from './add-entry-container/add-entry-container.component';
 import { AddEntryFormComponent } from './add-entry-form/add-entry-form.component';
-import { MatButtonModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatInputModule,
+  MatDatepickerModule,
+  MatNativeDateModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [AddEntryContainerComponent, AddEntryFormComponent],
@@ -17,7 +22,11 @@ import { MatButtonModule } from '@angular/material';
     AddEntryRoutingModule,
     StoreModule.forFeature('addEntry', fromAddEntry.reducer),
     EffectsModule.forFeature([AddEntryEffects]),
-    MatButtonModule
-  ]
+    MatButtonModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+  ],
+  providers: [MatDatepickerModule]
 })
 export class AddEntryModule {}
