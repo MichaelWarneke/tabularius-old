@@ -22,7 +22,6 @@ import { AppStoreModule } from '../app-store/app-store.module';
     }),
     AppStoreModule,
     LayoutModule,
-
     MaterialModule
   ],
   exports: [NavComponent]
