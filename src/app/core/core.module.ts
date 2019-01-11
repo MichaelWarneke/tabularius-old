@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 
-import { AppStoreModule } from '../app-store/app-store.module';
+import { AppStoreModule } from '@tabularius-libs/app-store';
 import { SharedModule } from '@tabularius-libs/shared';
 
 @NgModule({
