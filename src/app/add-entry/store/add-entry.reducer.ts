@@ -11,18 +11,8 @@ export const initialState: State = {
 
 export function reducer(state = initialState, action: AddEntryActions): State {
   switch (action.type) {
-    case AddEntryActionTypes.AddEntrySuccess:
-      return { ...state, addEntryState: 'Success' };
-
-    case AddEntryActionTypes.AddEntryError:
-      return { ...state, addEntryState: 'Error' };
-
-    case AddEntryActionTypes.AddEntry:
+    case AddEntryActionTypes.AddInvoiceReceivable:
       return { ...state, addEntryState: 'Sending' };
-
-    case AddEntryActionTypes.NewEntry:
-      return { ...state, addEntryState: 'Init' };
-
     default:
       return state;
   }

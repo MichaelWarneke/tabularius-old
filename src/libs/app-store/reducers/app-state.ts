@@ -1,14 +1,11 @@
 import { AppActions } from '../actions';
-import { InvoiceReceivable } from '@tabularius-libs/shared';
 
 export interface State {
   showMenu: boolean;
-  invoiceReceivables: InvoiceReceivable[];
 }
 
 const initialState: State = {
-  showMenu: false,
-  invoiceReceivables: []
+  showMenu: false
 };
 
 export function reducer(

@@ -2,31 +2,12 @@ import { Action } from '@ngrx/store';
 import { InvoiceReceivable } from '@tabularius-libs/shared';
 
 export enum AddEntryActionTypes {
-  AddEntry = '[AddEntry] Add Entry',
-  AddEntrySuccess = '[AddEntry] Add Entry Success',
-  AddEntryError = '[AddEntry] Add Entry Error',
-  NewEntry = '[AddEntry] New Entry'
+  AddInvoiceReceivable = '[Add Entry Page] Add Invoice Receivable'
 }
 
-export class AddEntry implements Action {
-  constructor(invoiceReceivable: InvoiceReceivable) {}
-  readonly type = AddEntryActionTypes.AddEntry;
+export class AddInvoiceReceivable implements Action {
+  constructor(readonly invoiceReceivable: InvoiceReceivable) {}
+  readonly type = AddEntryActionTypes.AddInvoiceReceivable;
 }
 
-export class AddEntrySuccess implements Action {
-  readonly type = AddEntryActionTypes.AddEntrySuccess;
-}
-
-export class AddEntryError implements Action {
-  readonly type = AddEntryActionTypes.AddEntryError;
-}
-
-export class NewEntry implements Action {
-  readonly type = AddEntryActionTypes.NewEntry;
-}
-
-export type AddEntryActions =
-  | AddEntry
-  | AddEntrySuccess
-  | AddEntryError
-  | NewEntry;
+export type AddEntryActions = AddInvoiceReceivable;

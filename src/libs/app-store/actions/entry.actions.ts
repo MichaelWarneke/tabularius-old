@@ -9,17 +9,17 @@ export enum EntryActionTypes {
 
 export class AddInvoiceReceivable implements Action {
   readonly type = EntryActionTypes.AddInvoiceReceivable;
-  constructor(entry: InvoiceReceivable) {}
+  constructor(readonly entry: InvoiceReceivable) {}
 }
 
 export class SuccessAddinvoiceReceivable implements Action {
   readonly type = EntryActionTypes.SuccessAddinvoiceReceivable;
-  constructor(status: string) {}
+  constructor(readonly status: string) {}
 }
 
 export class ErrorAddinvoiceReceivable implements Action {
   readonly type = EntryActionTypes.ErrorAddinvoiceReceivable;
-  constructor(error: string) {}
+  constructor(readonly error: string) {}
 }
 
 export type AppActionsUnion =
