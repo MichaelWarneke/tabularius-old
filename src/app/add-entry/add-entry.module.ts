@@ -7,26 +7,22 @@ import * as fromAddEntry from './store/add-entry.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { AddEntryEffects } from './store/add-entry.effects';
 import { AddEntryContainerComponent } from './add-entry-container/add-entry-container.component';
-import { AddEntryFormComponent } from './add-entry-form/add-entry-form.component';
-import {
-  MatButtonModule,
-  MatInputModule,
-  MatDatepickerModule,
-  MatNativeDateModule
-} from '@angular/material';
+
+import { InvoiceReceivableFormComponent } from './invoice-receivable-form/invoice-receivable-form.component';
+import { InvoicePayableFormComponent } from './invoice-payable-form/invoice-payable-form.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [AddEntryContainerComponent, AddEntryFormComponent],
+  declarations: [
+    AddEntryContainerComponent,
+    InvoiceReceivableFormComponent,
+    InvoicePayableFormComponent
+  ],
   imports: [
-    CommonModule,
+    SharedModule,
     AddEntryRoutingModule,
     StoreModule.forFeature('addEntry', fromAddEntry.reducer),
-    EffectsModule.forFeature([AddEntryEffects]),
-    MatButtonModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule
-  ],
-  providers: [MatDatepickerModule]
+    EffectsModule.forFeature([AddEntryEffects])
+  ]
 })
 export class AddEntryModule {}

@@ -1,4 +1,5 @@
 import { Action } from '@ngrx/store';
+import { InvoiceReceivable } from 'src/app/shared';
 
 export enum AddEntryActionTypes {
   AddEntry = '[AddEntry] Add Entry',
@@ -8,6 +9,7 @@ export enum AddEntryActionTypes {
 }
 
 export class AddEntry implements Action {
+  constructor(invoiceReceivable: InvoiceReceivable) {}
   readonly type = AddEntryActionTypes.AddEntry;
 }
 

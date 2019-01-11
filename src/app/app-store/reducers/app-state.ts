@@ -1,11 +1,14 @@
 import { AppActions } from '../actions';
+import { InvoiceReceivable } from 'src/app/shared';
 
 export interface State {
   showMenu: boolean;
+  invoiceReceivables: InvoiceReceivable[];
 }
 
 const initialState: State = {
-  showMenu: false
+  showMenu: false,
+  invoiceReceivables: []
 };
 
 export function reducer(

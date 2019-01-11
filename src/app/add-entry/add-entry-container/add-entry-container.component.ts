@@ -4,6 +4,7 @@ import * as fromStore from '../store/add-entry.reducer';
 import * as fromAction from '../store/add-entry.actions';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { InvoiceReceivable } from '@tabularius-libs/shared';
 
 @Component({
   selector: 'tabu-add-entry-container',
@@ -20,8 +21,9 @@ export class AddEntryContainerComponent implements OnInit {
     );
   }
 
-  addEntry() {
-    this.store.dispatch(new fromAction.AddEntry());
+  addInvoiceReceivable(entry: InvoiceReceivable) {
+    console.log('Entry :', entry);
+    this.store.dispatch(new fromAction.AddEntry(entry));
   }
 
   ngOnInit() {}

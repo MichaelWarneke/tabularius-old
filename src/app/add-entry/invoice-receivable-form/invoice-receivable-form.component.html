@@ -1,0 +1,56 @@
+<form [formGroup]="invoiceReceivableForm" class="add-entry-form">
+  <mat-form-field>
+    <input
+      formControlName="invoiceDate"
+      matInput
+      [matDatepicker]="invoiceDate"
+      placeholder="Invoice Date"
+    />
+    <mat-datepicker-toggle
+      matSuffix
+      [for]="invoiceDate"
+    ></mat-datepicker-toggle>
+    <mat-datepicker #invoiceDate></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      formControlName="dueDate"
+      matInput
+      [matDatepicker]="dueDate"
+      placeholder="Due Date"
+    />
+    <mat-datepicker-toggle matSuffix [for]="dueDate"></mat-datepicker-toggle>
+    <mat-datepicker #dueDate></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      formControlName="transactionDate"
+      matInput
+      [matDatepicker]="transactionDate"
+      placeholder="Transaction Date"
+    />
+    <mat-datepicker-toggle
+      matSuffix
+      [for]="transactionDate"
+    ></mat-datepicker-toggle>
+    <mat-datepicker #transactionDate></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="tabu-full-width">
+    <input formControlName="client" type="text" matInput placeholder="Client" />
+  </mat-form-field>
+
+  <mat-form-field class="tabu-full-width">
+    <textarea
+      formControlName="comment"
+      matInput
+      placeholder="Leave a comment"
+    ></textarea>
+  </mat-form-field>
+</form>
+<button mat-raised-button (click)="addEntry.emit(invoiceReceivableForm)">
+  Add
+</button>
+<p>Form : {{ invoiceReceivableForm.value | json }}</p>

@@ -16,7 +16,7 @@ import { environment } from '../../environments/environment';
       serializer: CustomSerializer
     }),
     StoreDevtoolsModule.instrument({
-      name: 'NgRx Book Store App',
+      name: 'Tabularius',
       logOnly: environment.production
     }),
     EffectsModule.forRoot([AppEffects])
