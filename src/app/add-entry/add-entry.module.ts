@@ -10,7 +10,7 @@ import { AddEntryContainerComponent } from './add-entry-container/add-entry-cont
 
 import { InvoiceReceivableFormComponent } from './invoice-receivable-form/invoice-receivable-form.component';
 import { InvoicePayableFormComponent } from './invoice-payable-form/invoice-payable-form.component';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '@tabularius-libs/shared';
 
 @NgModule({
   declarations: [

@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -12,8 +12,8 @@
     "importHelpers": true,
     "strict": true,
     "paths": {
-      "@tabularius-app/*": ["./src/app"],
-      "@tabularius-libs/": ["./src/libs"]
+      "@tabularius-app/*": ["./src/app/*"],
+      "@tabularius-libs/*": ["./src/libs/*"]
     },
     "rootDir": "./",
     "target": "es5",

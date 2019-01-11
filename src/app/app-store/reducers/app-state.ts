@@ -1,5 +1,5 @@
 import { AppActions } from '../actions';
-import { InvoiceReceivable } from 'src/app/shared';
+import { InvoiceReceivable } from '@tabularius-libs/shared';
 
 export interface State {
   showMenu: boolean;

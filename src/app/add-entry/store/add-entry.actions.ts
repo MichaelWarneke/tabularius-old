@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { InvoiceReceivable } from 'src/app/shared';
+import { InvoiceReceivable } from '@tabularius-libs/shared';
 
 export enum AddEntryActionTypes {
   AddEntry = '[AddEntry] Add Entry',
