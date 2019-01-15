@@ -15,7 +15,7 @@ export function reducer(
   action: EntryActions.AppActionsUnion
 ): State {
   switch (action.type) {
-    case EntryActions.EntryActionTypes.AddInvoiceReceivable:
+    case EntryActions.EntryActionTypes.ADD_INVOICE_RECEIVABLE:
       return {
         ...state,
         invoiceReceivables: [...state.invoiceReceivables, action.entry]

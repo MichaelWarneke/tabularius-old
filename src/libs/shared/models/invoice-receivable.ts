@@ -5,4 +5,7 @@ export interface InvoiceReceivable extends TabulariusBase {
   transactionDate: Date;
   client: string;
   comment: string;
+  amount: number;
+  currency: string;
+  account: string;
 }

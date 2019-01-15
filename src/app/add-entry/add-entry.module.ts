@@ -11,6 +11,7 @@ import { AddEntryContainerComponent } from './add-entry-container/add-entry-cont
 import { InvoiceReceivableFormComponent } from './invoice-receivable-form/invoice-receivable-form.component';
 import { InvoicePayableFormComponent } from './invoice-payable-form/invoice-payable-form.component';
 import { SharedModule } from '@tabularius-libs/shared';
+import { lists } from '@tabularius-libs/ui';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SharedModule } from '@tabularius-libs/shared';
     SharedModule,
     AddEntryRoutingModule,
     StoreModule.forFeature('addEntry', fromAddEntry.reducer),
-    EffectsModule.forFeature([AddEntryEffects])
+    EffectsModule.forFeature([AddEntryEffects]),
+    lists.InvoiceReceivableListModule
   ]
 })
 export class AddEntryModule {}

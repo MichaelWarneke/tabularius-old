@@ -13,7 +13,10 @@ export class InvoiceReceivableFormComponent implements OnInit {
     dueDate: new FormControl(''),
     transactionDate: new FormControl(''),
     client: new FormControl(''),
-    comment: new FormControl('')
+    comment: new FormControl(''),
+    amount: new FormControl(''),
+    currency: new FormControl(''),
+    account: new FormControl('')
   });
   constructor() {}
 
