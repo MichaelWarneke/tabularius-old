@@ -1,12 +1,12 @@
 import { Action } from '@ngrx/store';
-import { InvoiceReceivable } from '@tabularius-libs/shared';
+import { Journal } from '@tabularius-libs/app-store';
 
 export enum AddEntryActionTypes {
   AddInvoiceReceivable = '[Add Entry Page] Add Invoice Receivable'
 }
 
 export class AddInvoiceReceivable implements Action {
-  constructor(readonly invoiceReceivable: InvoiceReceivable) {}
+  constructor(readonly invoiceReceivable: Journal) {}
   readonly type = AddEntryActionTypes.AddInvoiceReceivable;
 }
 

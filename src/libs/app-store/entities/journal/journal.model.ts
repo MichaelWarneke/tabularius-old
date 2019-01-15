@@ -1,5 +1,5 @@
-export interface InvoiceReceivable extends TabulariusBase2 {
-  invoiceDate: Date;
+export interface Journal extends TabulariusBase {
+  date: Date;
   dueDate: Date;
   transactionDate: Date;
   client: string;

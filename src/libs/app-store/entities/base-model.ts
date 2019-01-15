@@ -1,4 +1,4 @@
-interface TabulariusBase2 {
+interface TabulariusBase {
   id: string;
   created: Date;
   createdBy: string;

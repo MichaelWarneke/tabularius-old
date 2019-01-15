@@ -5,7 +5,6 @@ import * as fromAction from '../store/add-entry.actions';
 import * as fromAppStore from '@tabularius-libs/app-store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { InvoiceReceivable } from '@tabularius-libs/shared';
 
 @Component({
   selector: 'tabu-add-entry-container',
@@ -14,20 +13,20 @@ import { InvoiceReceivable } from '@tabularius-libs/shared';
 })
 export class AddEntryContainerComponent implements OnInit {
   state$: Observable<string>;
-  invoiceReceivables$: Observable<InvoiceReceivable[]>;
+  journal$: Observable<fromAppStore.Journal[]>;
 
   constructor(private store: Store<any>) {
     this.state$ = store.pipe(
       select(fromStore.selectAddEntryState),
       map(state => (state ? state : 'Nothing'))
     );
-    this.invoiceReceivables$ = store.pipe(
-      select(fromAppStore.getInvoiceReceivablesState),
+    this.journal$ = store.pipe(
+      select(fromAppStore.getAllJournals),
       map(state => (state ? state : []))
     );
   }
 
-  addInvoiceReceivable(entry: InvoiceReceivable) {
+  addInvoiceReceivable(entry: fromAppStore.Journal) {
     console.log('Entry :', entry);
     this.store.dispatch(new fromAction.AddInvoiceReceivable(entry));
   }

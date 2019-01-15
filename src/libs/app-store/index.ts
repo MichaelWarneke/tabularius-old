@@ -1,5 +1,8 @@
 export { AppStoreModule } from './app-store.module';
 
-export { AppActions, EntryActions } from './actions';
+export { AppActions } from './actions';
 
-export { getInvoiceReceivablesState } from './reducers';
+import * as JournalActions from './entities/journal/journal.actions';
+export { JournalActions };
+export { Journal } from './entities';
+export { getAllJournals } from './reducers';
