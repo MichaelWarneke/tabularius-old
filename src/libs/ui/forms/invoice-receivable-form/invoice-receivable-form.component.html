@@ -1,16 +1,46 @@
 <form [formGroup]="invoiceReceivableForm" class="add-entry-form">
   <mat-form-field>
     <input
-      formControlName="invoiceDate"
+      formControlName="date"
       matInput
       [matDatepicker]="invoiceDate"
       placeholder="Invoice Date"
+      required
     />
     <mat-datepicker-toggle
       matSuffix
       [for]="invoiceDate"
     ></mat-datepicker-toggle>
     <mat-datepicker #invoiceDate></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="tabu-full-width">
+    <input
+      formControlName="amount"
+      type="number"
+      matInput
+      placeholder="Amount"
+      required
+    />
+  </mat-form-field>
+
+  <mat-form-field class="tabu-full-width">
+    <input
+      formControlName="currency"
+      type="text"
+      matInput
+      placeholder="Currency"
+      required
+    />
+  </mat-form-field>
+
+  <mat-form-field class="tabu-full-width">
+    <input
+      formControlName="account"
+      type="text"
+      matInput
+      placeholder="Account"
+    />
   </mat-form-field>
 
   <mat-form-field>
@@ -39,33 +69,6 @@
   </mat-form-field>
 
   <mat-form-field class="tabu-full-width">
-    <input
-      formControlName="amount"
-      type="number"
-      matInput
-      placeholder="Amount"
-    />
-  </mat-form-field>
-
-  <mat-form-field class="tabu-full-width">
-    <input
-      formControlName="currency"
-      type="text"
-      matInput
-      placeholder="Currency"
-    />
-  </mat-form-field>
-
-  <mat-form-field class="tabu-full-width">
-    <input
-      formControlName="account"
-      type="text"
-      matInput
-      placeholder="Account"
-    />
-  </mat-form-field>
-
-  <mat-form-field class="tabu-full-width">
     <input formControlName="client" type="text" matInput placeholder="Client" />
   </mat-form-field>
 
@@ -77,7 +80,11 @@
     ></textarea>
   </mat-form-field>
 </form>
-<button mat-raised-button (click)="addEntry.emit(invoiceReceivableForm)">
+<button
+  [disabled]="invoiceReceivableForm.invalid"
+  mat-raised-button
+  (click)="submit()"
+>
   Add
 </button>
-<p>Form : {{ invoiceReceivableForm.value | json }}</p>
+<p>Form : {{ invoiceReceivableForm.valid | json }}</p>

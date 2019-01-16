@@ -4,7 +4,8 @@
 <mat-tab-group>
   <mat-tab label="Invoice Receivable">
     <tabu-invoice-receivable-form
-      (addEntry)="addInvoiceReceivable($event.value)"
+      (addEntry)="addInvoiceReceivable($event)"
+      [defaultCurrency]="defaultCurrency$ | async"
     ></tabu-invoice-receivable-form>
   </mat-tab>
   <mat-tab label="Invoice Payable"> Content 2 </mat-tab>
@@ -12,5 +13,5 @@
 </mat-tab-group>
 
 <tabu-invoice-receivable-list
-  [list]="invoiceReceivables$ | async"
+  [list]="journal$ | async"
 ></tabu-invoice-receivable-list>

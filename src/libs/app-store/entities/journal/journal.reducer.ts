@@ -1,21 +1,35 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-import { Journal } from './journal.model';
+import { IJournal } from './journal.model';
 import { JournalActions, JournalActionTypes } from './journal.actions';
 
-export interface State extends EntityState<Journal> {
+export interface State extends EntityState<IJournal> {
   // additional entities state properties
 }
 
-export const adapter: EntityAdapter<Journal> = createEntityAdapter<Journal>();
+export function sortByDate(a: IJournal, b: IJournal): number {
+  if (a.date == null || b.date == null) {
+    return 0;
+  }
+  if (a.date === b.date) {
+    return 0;
+  }
+  if (a.date.valueOf > b.date.valueOf) {
+    return 1;
+  }
+
+  return -1;
+}
+
+export const adapter: EntityAdapter<IJournal> = createEntityAdapter<IJournal>({
+  sortComparer: sortByDate
+});
 
 export const initialState: State = adapter.getInitialState({
   // additional entity state properties
 });
 
-export function reducer(
-  state = initialState,
-  action: JournalActions
-): State {
+export function reducer(state = initialState, action: JournalActions): State {
+  console.log('Journal reducer : ', action);
   switch (action.type) {
     case JournalActionTypes.AddJournal: {
       return adapter.addOne(action.payload.journal, state);
@@ -67,5 +81,5 @@ export const {
   selectIds,
   selectEntities,
   selectAll,
-  selectTotal,
+  selectTotal
 } = adapter.getSelectors();

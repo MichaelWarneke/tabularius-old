@@ -27,3 +27,5 @@ export function reducer(
       return state;
   }
 }
+
+export const selectShowMenu = (state: State) => state.showMenu;

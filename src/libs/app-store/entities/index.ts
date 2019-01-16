@@ -1,1 +1,1 @@
-export { Journal } from './journal/journal.model';
+export { IJournal } from './journal/journal.model';

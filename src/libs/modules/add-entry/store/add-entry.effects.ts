@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { AddEntryActionTypes } from './add-entry.actions';
-import { switchMap, map } from 'rxjs/operators';
+import {
+  AddEntryActionTypes,
+  AddInvoiceReceivableAction
+} from './add-entry.actions';
+import { switchMap, map, mapTo } from 'rxjs/operators';
 import { of, Observable } from 'rxjs';
 import { JournalActions } from '@tabularius-libs/app-store';
 import { Action } from '@ngrx/store';
@@ -10,10 +13,11 @@ import { Action } from '@ngrx/store';
 export class AddEntryEffects {
   @Effect()
   addEntry$: Observable<Action> = this.actions$.pipe(
-    ofType(AddEntryActionTypes.AddInvoiceReceivable),
-    map(
-      action => new JournalActions.AddJournal((action as any).invoiceReceivable)
-    )
+    ofType<AddInvoiceReceivableAction>(
+      AddEntryActionTypes.AddInvoiceReceivableAction
+    ),
+    map(payload => payload.invoiceReceivable),
+    map(journal => new JournalActions.AddJournal({ journal }))
   );
 
   constructor(private actions$: Actions) {}

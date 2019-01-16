@@ -1,5 +1,7 @@
-<p>invoice-receivable-list works!</p>
-
+<h2>Journal</h2>
 <div *ngFor="let item of list">
-  <p>{{ item.invoiceDate }} Client {{ item.client }}</p>
+  <p>
+    {{ item.date | date: 'yyyy-MM-dd' }}
+    {{ item.amount | currency: 'AUD' }} Client {{ item.client }}
+  </p>
 </div>
