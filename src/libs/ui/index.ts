@@ -1,7 +1,7 @@
-import * as lists from './lists';
+import { InvoiceReceivableListModule } from './lists';
 
-export { lists };
+export { InvoiceReceivableListModule };
 
-import * as forms from './forms';
+import { InvoiceReceivableFormModule } from './forms';
 
-export { forms };
+export { InvoiceReceivableFormModule };

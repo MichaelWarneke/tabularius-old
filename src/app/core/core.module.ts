@@ -9,6 +9,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 
 import { AppStoreModule } from '@tabularius-libs/app-store';
 import { SharedModule } from '@tabularius-libs/shared';
+import { ApiModule } from '@tabularius-libs/api';
 
 @NgModule({
   declarations: [NavComponent],
@@ -20,7 +21,8 @@ import { SharedModule } from '@tabularius-libs/shared';
       enabled: environment.production
     }),
     AppStoreModule,
-    LayoutModule
+    LayoutModule,
+    ApiModule
   ],
   exports: [NavComponent]
 })

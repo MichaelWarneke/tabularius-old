@@ -8,8 +8,8 @@ import { AddEntryEffects } from './store/add-entry.effects';
 import { AddEntryContainerComponent } from './add-entry-container/add-entry-container.component';
 
 import { SharedModule } from '@tabularius-libs/shared';
-import { lists } from '@tabularius-libs/ui';
-import { forms } from '@tabularius-libs/ui';
+import { InvoiceReceivableListModule } from '@tabularius-libs/ui';
+import { InvoiceReceivableFormModule } from '@tabularius-libs/ui';
 
 @NgModule({
   declarations: [AddEntryContainerComponent],
@@ -18,8 +18,8 @@ import { forms } from '@tabularius-libs/ui';
     AddEntryRoutingModule,
     StoreModule.forFeature('addEntry', fromAddEntry.reducer),
     EffectsModule.forFeature([AddEntryEffects]),
-    lists.InvoiceReceivableListModule,
-    forms.InvoiceReceivableFormModule
+    InvoiceReceivableListModule,
+    InvoiceReceivableFormModule
   ]
 })
 export class AddEntryModule {}
