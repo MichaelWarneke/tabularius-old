@@ -11,7 +11,7 @@ export const initialState: State = {
 
 export function reducer(state = initialState, action: AddEntryActions): State {
   switch (action.type) {
-    case AddEntryActionTypes.AddInvoiceReceivableAction:
+    case AddEntryActionTypes.ADD_INVOICE_RECEIVABLE:
       return { ...state, addEntryState: 'Sending' };
     default:
       return state;

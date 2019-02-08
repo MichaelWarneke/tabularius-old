@@ -30,7 +30,7 @@ export class AddEntryContainerComponent implements OnInit {
   }
 
   addInvoiceReceivable(entry: IJournal) {
-    this.store.dispatch(new fromAction.AddInvoiceReceivableAction(entry));
+    this.store.dispatch(fromAction.addInvoiceReceivableAction(entry));
   }
 
   ngOnInit() {}

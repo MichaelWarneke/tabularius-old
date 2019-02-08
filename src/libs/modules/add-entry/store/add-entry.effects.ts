@@ -14,9 +14,9 @@ export class AddEntryEffects {
   @Effect()
   addEntry$: Observable<Action> = this.actions$.pipe(
     ofType<AddInvoiceReceivableAction>(
-      AddEntryActionTypes.AddInvoiceReceivableAction
+      AddEntryActionTypes.ADD_INVOICE_RECEIVABLE
     ),
-    map(payload => payload.invoiceReceivable),
+    map(action => action.payload),
     map(journal => new JournalActions.AddJournal({ journal }))
   );
 
