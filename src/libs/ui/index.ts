@@ -1,7 +1,3 @@
-import { InvoiceReceivableListModule } from './lists';
+export { InvoiceReceivableListModule, ImportXlsxListModule } from './lists';
 
-export { InvoiceReceivableListModule };
-
-import { InvoiceReceivableFormModule } from './forms';
-
-export { InvoiceReceivableFormModule };
+export { InvoiceReceivableFormModule } from './forms';

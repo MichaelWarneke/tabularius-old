@@ -30,6 +30,7 @@ export class AddEntryContainerComponent implements OnInit {
   }
 
   addInvoiceReceivable(entry: IJournal) {
+    entry.id = Date.now();
     this.store.dispatch(fromAction.addInvoiceReceivableAction(entry));
   }
 

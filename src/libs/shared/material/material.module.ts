@@ -8,7 +8,8 @@ import {
   MatTabsModule,
   MatInputModule,
   MatDatepickerModule,
-  MatCardModule
+  MatCardModule,
+  MatTableModule
 } from '@angular/material';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
@@ -24,7 +25,8 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     MatInputModule,
     MatDatepickerModule,
     MatMomentDateModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule
   ],
   exports: [
     MatToolbarModule,
@@ -36,7 +38,8 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     MatInputModule,
     MatDatepickerModule,
     MatMomentDateModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule
   ],
   providers: [MatDatepickerModule]
 })

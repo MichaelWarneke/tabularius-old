@@ -18,7 +18,7 @@ import { IJournal } from '@tabularius-libs/app-store';
 export class InvoiceReceivableModel {
   id = [-1, Validators.required];
   date = [new Date(Date.now()), Validators.required];
-  amount = [0, Validators.required];
+  amount = [, Validators.required];
   currency = ['', Validators.required];
   account = ['', Validators.required];
   dueDate = [undefined];

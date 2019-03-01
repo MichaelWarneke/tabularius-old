@@ -1,0 +1,6 @@
+<div>
+  <button mat-raised-button click="importXlsx()">
+    <label>Import Xlsx</label>
+  </button>
+  <input type="file" (change)="importXlsx.emit($event)" multiple="false" />
+</div>

@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren:
       '@tabularius-libs/modules/add-entry/add-entry.module#AddEntryModule'
   },
+  {
+    path: 'import',
+    loadChildren: '@tabularius-libs/modules/import/import.module#ImportModule'
+  },
   { path: '', redirectTo: '/dash', pathMatch: 'full' }
 ];
 
